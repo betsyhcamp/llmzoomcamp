@@ -31,7 +31,9 @@ pre-commit install
 ```
 
 ## Project structure
- ** **`WIP`** **
+
+\*\* **`WIP`** \*\*
+
 ```text
 .
 ├── 01-agentic-rag
@@ -51,9 +53,9 @@ pre-commit install
 └── Taskfile.yml
 
 ```
+
 - Tooling configuration lives in `pyproject.toml`
 - Automation is centralized in `Taskfile.yml`
-
 
 ## How checks are organized
 
@@ -69,4 +71,3 @@ This project uses a **hybrid approach** for code quality:
 
 - Tool versions in `pyproject.toml` are intentionally unpinned; `uv.lock` is the reproducibility mechanism and should be committed.
 - CI mirrors local commands exactly via the Taskfile.
-
