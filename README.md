@@ -1,5 +1,7 @@
 # llmzoomcamp
 
+[![CI](https://github.com/betsyhcamp/llmzoomcamp/actions/workflows/ci.yml/badge.svg)](https://github.com/betsyhcamp/llmzoomcamp/actions/workflows/ci.yml) ![Python 3.14](https://img.shields.io/badge/python-3.14-blue) [![License: Unlicense](https://img.shields.io/badge/license-Unlicense-cyan.svg)](LICENSE)
+
 This repository contains my code and notes working through the 2026 cohort of LLM Zoomcamp. This is a 10 week hands-on course focusing on RAG, vector search, embeddings, agents, evaluation, monitoring, and orchestration.
 
 The course repo from the instructors is here: https://github.com/DataTalksClub/llm-zoomcamp
@@ -66,5 +68,5 @@ This project uses a **hybrid approach** for code quality:
 ## Notes
 
 - Tool versions in `pyproject.toml` are intentionally unpinned; `uv.lock` is the reproducibility mechanism and should be committed.
-- CI (if enabled) mirrors local commands exactly via the Taskfile.
+- CI mirrors local commands exactly via the Taskfile.
 
