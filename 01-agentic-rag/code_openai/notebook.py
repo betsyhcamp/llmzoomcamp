@@ -334,3 +334,58 @@ assistant.rag("How do I get a certificate?")
 assistant.rag("Can I still join the course after it started?")
 
 # %%
+assistant.rag("How do I run Ollama locally?")
+
+# %%
+assistant.rag("How do I run Olama locally?")
+
+# %%
+messages = [
+    {"role": "user", "content": "I just discovered the course. Can I join it?"}
+]
+
+response = openai_client.responses.create(
+    model="gpt-5.4-mini",
+    input=messages,
+)
+
+response.output_text
+
+# %%
+
+search_tool = {
+    "type": "function",
+    "name": "search",
+    "description": "Search the FAQ database for entries matching the given query.",
+    "parameters": {
+        "type": "object",
+        "properties": {
+            "query": {
+                "type": "string",
+                "description": "Search query text to look up in the course FAQ."
+            }
+        },
+        "required": ["query"],
+        "additionalProperties": False
+    }
+}
+
+# %%
+response = openai_client.responses.create(
+    model="gpt-5.4-mini",
+    input=messages,
+    tools=[search_tool],
+)
+
+response.output
+
+# %%
+import json
+
+call = response.output[0]
+args = json.loads(call.arguments)
+
+
+# %%
+results = search(**args)
+result_json = json.dumps(results, indent=2)
