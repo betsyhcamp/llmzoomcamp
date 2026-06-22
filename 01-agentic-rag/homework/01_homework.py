@@ -14,6 +14,7 @@
 
 # %%
 from gitsource import GithubRepositoryDataReader
+from gitsource import chunk_documents
 
 # %%
 reader = GithubRepositoryDataReader(
@@ -34,5 +35,15 @@ for file in files:
     documents.append(doc)
 
 # %%
+len(files)
+
+# %%
+files
+
+# %%
+chunks = chunk_documents(documents, size=2000, step=1000)
+
+# %%
+len(chunks)
 
 # %%
